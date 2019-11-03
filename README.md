@@ -2,24 +2,15 @@
 
 ### The Bridge
 
-REST interface to World of Code data.
+Project to join data from World of Code, Software Heritage and GHTorrent
 
 Motivation: TBD
 
-API_URL: TBD
+Architecture
+-------------
 
-## API endpoints:
-
-Project to commits
-----------------
-Returns list of SHA1 hashes, separated by newline character ('\n')
+The project is a Python script which could be run on WoC servers.
+It will access GHTorrent via REST API
 
 
-Project to authors
------------------
-Returns list of authors in a form 'Author Name <email@domain.tld>'
 
-
-Project to trees
-----------------
-Return list of top-level commit tree SHA1 hashes, separated by a newline character.

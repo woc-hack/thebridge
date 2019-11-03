@@ -22,16 +22,21 @@ from sqlalchemy import create_engine
 
 USER = 'ghtorrent_user'
 PASSWORD = 'ghtorrent_password'
-HOST = '127.0.0.1'  # localhost won't work
-OPTIONS = 'charset=utf8mb4&unix_socket=/var/run/mysqld/mysql.sock'
+# localhost won't work on host, 127.0.0.1 doesn't work in a docker container
+# HOST = '127.0.0.1'
+HOST = 'localhost'
+# OPTIONS = 'charset=utf8mb4&unix_socket=/var/run/mysqld/mysql.sock'
+OPTIONS = 'charset=utf8mb4&unix_socket=/var/mysqld/mysqld.sock'
 DATABASE = 'ghtorrent-2018-03'
 
-conn_string = 'mysql+mysqldb://{user}:{password}@{host}/{db}?{options}'.format(
-    user=USER, password=PASSWORD, host=HOST, db=DATABASE, options=OPTIONS)
+# conn_string = 'mysql+mysqldb://{user}:{password}@{host}/{db}?{options}'.format(
+#     user=USER, password=PASSWORD, host=HOST, db=DATABASE, options=OPTIONS)
+conn_string = ('mysql+mysqldb://ghtorrent_user:ghtorrent_password@'
+               'localhost/ghtorrent-2018-03?unix_socket=/var/mysqld/mysqld.sock')
 engine = create_engine(conn_string, pool_recycle=3600)
 
 define('debug', default=False)
-define("http_port", default=9001)
+define("http_port", default=9002)
 define('static_path', default=os.path.join(os.path.dirname(__file__), 'static'))
 
 
