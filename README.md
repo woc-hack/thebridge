@@ -14,4 +14,4 @@ It will access GHTorrent via REST API
 
 
 
-![Current stats](https://docs.google.com/presentation/d/1WO1nndSWvORCwUQVsdqQy4rKRgWpLDzhAnR-D5gsBTE/edit#slide=id.p)
+[Current stats](https://docs.google.com/presentation/d/1WO1nndSWvORCwUQVsdqQy4rKRgWpLDzhAnR-D5gsBTE/edit#slide=id.p)
